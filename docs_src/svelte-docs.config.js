@@ -1,6 +1,6 @@
 module.exports = {
     // if you will serve docs in subdirictory use '/subdir/'
-    basepath: '/svelte-embed-player/',
+    basepath: '/svelte-react-player/',
 
     // theme
     theme: 'default',

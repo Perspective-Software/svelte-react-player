@@ -4,7 +4,7 @@
 
 Wrapper for the standalone version of [react-player](https://github.com/CookPete/react-player).
 
-[Documentation & Demo](https://perspective-software.github.io/svelte-image-imgix/)
+[Documentation & Demo](https://perspective-software.github.io/svelte-react-player/)
 
 ## Installation
 
