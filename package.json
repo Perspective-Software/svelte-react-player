@@ -1,0 +1,21 @@
+{
+  "name": "svelte-react-player",
+  "version": "1.0.0",
+  "description": "Svelte wrapper for react-player",
+  "main": "src/index.js",
+  "scripts": {
+    "deploy": "cd ./docs_src && npm run deploy",
+    "dev": "cd ./docs_src && npm run dev"
+  },
+  "keywords": [
+    "svelte",
+    "react-player",
+    "video",
+    "embed"
+  ],
+  "author": "Christian Korndoerfer",
+  "license": "ISC",
+  "dependencies": {
+    "svelte": "^3.32.3"
+  }
+}
