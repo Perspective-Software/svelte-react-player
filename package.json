@@ -17,5 +17,9 @@
   "license": "ISC",
   "dependencies": {
     "svelte": "^3.32.3"
+  },
+  "devDependencies": {
+    "prettier": "^2.2.1",
+    "prettier-plugin-svelte": "^2.1.6"
   }
 }
