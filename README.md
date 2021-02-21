@@ -17,7 +17,7 @@ Enjoy:
     import { Player } from 'svelte-react-player'
 </script>
 
-<Player url="https://example.imgix.net/myimage.jpg" />
+<Player url="https://www.youtube.com/watch?v=NduTgkntfT4" />
 ```
 
 ## Props
