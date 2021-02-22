@@ -28,6 +28,11 @@
     let playerElem;
     let mounted = false;
 
+    // Reactivity
+    let prevPlaying = playing;
+    let prevUrl = url;
+    let prevVolume = volume;
+
     onMount(() => {
         renderPlayer();
         mounted = true;
@@ -61,15 +66,14 @@
         renderReactPlayer(playerElem, settings);
     };
 
-    // const tickedRenderPlayer = async () => {
-    //     console.log(playing);
-    //     await tick();
-    //     renderPlayer();
-    // };
-
     $: if (mounted) {
-        console.log(playing);
-        renderPlayer();
+        if ( playing !== prevPlaying || url !== prevUrl || volume !== prevVolume ) {
+            renderPlayer();
+
+            prevPlaying = playing;
+            prevUrl = url;
+            prevVolume = volume;
+        }
     }
 </script>
 
