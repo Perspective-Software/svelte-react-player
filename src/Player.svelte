@@ -46,8 +46,8 @@
             volume,
             muted,
             playbackRate,
-            width,
-            height,
+            width: fluid ? '100%' : width,
+            height: fluid ? '100%' : height,
             style,
             progressInterval,
             playsinline,
@@ -61,13 +61,14 @@
             playIcon,
             previewTabIndex,
             config,
+            className: 'react-player',
         };
 
         renderReactPlayer(playerElem, settings);
     };
 
     $: if (mounted) {
-        if ( playing !== prevPlaying || url !== prevUrl || volume !== prevVolume ) {
+        if (playing !== prevPlaying || url !== prevUrl || volume !== prevVolume) {
             renderPlayer();
 
             prevPlaying = playing;
@@ -87,7 +88,7 @@
         padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) = 16:9 */
     }
 
-    :global(.react-player) {
+    .fluidWrapper :global(.react-player) {
         position: absolute;
         top: 0;
         left: 0;
