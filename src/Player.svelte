@@ -25,6 +25,8 @@
     export let config = {};
     export let fluid = false;
 
+    export let callbacks = {};
+
     let playerElem;
     let mounted = false;
 
@@ -62,6 +64,7 @@
             previewTabIndex,
             config,
             className: 'react-player',
+            ...callbacks,
         };
 
         renderReactPlayer(playerElem, settings);
