@@ -24,6 +24,7 @@
     export let previewTabIndex = 0;
     export let config = {};
     export let fluid = false;
+    export let ratio = '56.25%'; /* Player ratio: 100 / (1280 / 720) = 16:9 */
 
     export let callbacks = {};
 
@@ -81,14 +82,13 @@
     }
 </script>
 
-<div class:fluidWrapper={fluid}>
+<div class:fluidWrapper={fluid} style="{fluid ? `padding-top: ${ratio}` : ''}">
     <div bind:this={playerElem} />
 </div>
 
 <style>
     .fluidWrapper {
         position: relative;
-        padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) = 16:9 */
     }
 
     .fluidWrapper :global(.react-player) {
