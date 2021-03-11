@@ -89,6 +89,7 @@
 <style>
     .fluidWrapper {
         position: relative;
+        width: 100%;
     }
 
     .fluidWrapper :global(.react-player) {
