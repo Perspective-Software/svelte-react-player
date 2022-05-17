@@ -14,7 +14,7 @@
   "scripts": {
     "build": "rollup -c node_modules/@svelte-docs/core/rollup.config.js",
     "autobuild": "rollup -c node_modules/@svelte-docs/core/rollup.config.js -w",
-    "dev": "run-p start:dev start:pagewatch autobuild",
+    "dev": "run-p start:dev autobuild",
     "start": "node node_modules/@svelte-docs/server",
     "start:dev": "node node_modules/@svelte-docs/server --dev --single",
     "start:pagewatch": "node node_modules/@svelte-docs/core/watcher",
