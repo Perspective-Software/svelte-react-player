@@ -1,12 +1,14 @@
 {
   "name": "svelte-react-player",
-  "version": "1.3.1",
+  "version": "1.3.3",
   "description": "Svelte wrapper for react-player",
   "main": "src/index.js",
   "scripts": {
     "deploy": "cd ./docs_src && npm run deploy",
     "dev": "cd ./docs_src && npm run dev"
   },
+  "svelte": "src/Player.svelte",
+  "type": "module",
   "keywords": [
     "svelte",
     "react-player",
