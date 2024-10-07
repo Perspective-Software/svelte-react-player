@@ -1,6 +1,6 @@
 {
   "name": "svelte-react-player",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Svelte wrapper for react-player",
   "main": "src/index.js",
   "scripts": {
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Perspective-Software/svelte-react-player",
   "license": "ISC",
   "dependencies": {
+    "loadjs": "^4.3.0",
     "svelte": "^3.32.3"
   },
   "devDependencies": {
