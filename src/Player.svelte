@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte';
-    import renderReactPlayer from './reactPlayer';
+    import loadjs from 'loadjs';
 
     // https://github.com/cookpete/react-player#props
     export let url = '';
@@ -36,9 +36,18 @@
     let prevUrl = url;
     let prevVolume = volume;
 
+
     onMount(() => {
-        renderPlayer();
         mounted = true;
+
+        loadjs('https://cdn.jsdelivr.net/npm/react-player@2.16.0/dist/ReactPlayer.standalone.min.js', {
+            success() {
+                renderPlayer();
+            },
+            error() {
+                console.error('Failed to load the ReactPlayer script');
+            },
+        });
     });
 
     const renderPlayer = () => {
@@ -68,7 +77,8 @@
             ...callbacks,
         };
 
-        renderReactPlayer(playerElem, settings);
+        if (typeof window.renderReactPlayer === 'function') window.renderReactPlayer(playerElem, settings);
+        else console.error('Unable to find react player on window object');
     };
 
     $: if (mounted) {
