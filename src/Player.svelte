@@ -33,6 +33,7 @@
 
     // Reactivity
     let prevPlaying = playing;
+    let prevMuted = muted;
     let prevUrl = url;
     let prevVolume = volume;
 
@@ -82,12 +83,13 @@
     };
 
     $: if (mounted) {
-        if (playing !== prevPlaying || url !== prevUrl || volume !== prevVolume) {
+        if (playing !== prevPlaying || url !== prevUrl || volume !== prevVolume || muted !== prevMuted) {
             renderPlayer();
 
             prevPlaying = playing;
             prevUrl = url;
             prevVolume = volume;
+            prevMuted = muted;
         }
     }
 </script>
