@@ -4,16 +4,21 @@
 <script>
     import { Player } from 'svelte-react-player';
     
+    let muted = false;
     let playing = false;
     let url = 'https://vimeo.com/217499569';
     let volume = null;
     
     const handlePlay = () => playing = true;
     const handlePause = () => playing = false;
+    const handleMute = () => muted = true;
+    const handleUnmute = () => muted = false;
 </script>
 
 <button on:click={handlePlay}>Play</button>
 <button on:click={handlePause}>Pause</button>
+<button on:click={handleMute}>Mute</button>
+<button on:click={handleUnmute}>Unmute</button>
 <select bind:value={url}>
     <option value="https://www.youtube.com/watch?v=NduTgkntfT4">YouTube</option>;
     <option value="https://vimeo.com/217499569">Vimeo</option>
@@ -28,5 +33,5 @@
 </select>
 <input type="range" bind:value={volume} min="0" max="1" step="0.1" />
 
-<Player {url} {playing} {volume} controls />
+<Player {url} {playing} {volume} {muted} controls />
 ```
